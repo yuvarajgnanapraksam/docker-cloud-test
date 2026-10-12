@@ -1,73 +1,13 @@
 
 [
-  {
-    "employee_id": 1001,
-    "name": "Arun Kumar",
-    "email": "arun.kumar@example.com",
-    "department": "Engineering",
-    "role": "Python Developer"
-  },
-  {
-    "employee_id": 1002,
-    "name": "Priya Sharma",
-    "email": "priya.sharma@example.com",
-    "department": "Human Resources",
-    "role": "HR Executive"
-  },
-  {
-    "employee_id": 1003,
-    "name": "Karthik Raj",
-    "email": "karthik.raj@example.com",
-    "department": "Engineering",
-    "role": "Backend Developer"
-  },
-  {
-    "employee_id": 1004,
-    "name": "Divya S",
-    "email": "divya.s@example.com",
-    "department": "Finance",
-    "role": "Accountant"
-  },
-  {
-    "employee_id": 1005,
-    "name": "Vijay Anand",
-    "email": "vijay.anand@example.com",
-    "department": "Engineering",
-    "role": "Software Tester"
-  },
-  {
-    "employee_id": 1006,
-    "name": "Meena Devi",
-    "email": "meena.devi@example.com",
-    "department": "Marketing",
-    "role": "Marketing Executive"
-  },
-  {
-    "employee_id": 1007,
-    "name": "Ravi Shankar",
-    "email": "ravi.shankar@example.com",
-    "department": "Sales",
-    "role": "Sales Executive"
-  },
-  {
-    "employee_id": 1008,
-    "name": "Anitha R",
-    "email": "anitha.r@example.com",
-    "department": "Human Resources",
-    "role": "Recruiter"
-  },
-  {
-    "employee_id": 1009,
-    "name": "Suresh Babu",
-    "email": "suresh.babu@example.com",
-    "department": "Finance",
-    "role": "Financial Analyst"
-  },
-  {
-    "employee_id": 1010,
-    "name": "Nila Prakash",
-    "email": "nila.prakash@example.com",
-    "department": "Engineering",
-    "role": "API Developer"
-  }
+  {"employee_id": 1001, "name": "Arun Kumar", "work_email": "arun.kumar@example.com", "department": "Engineering", "role": "Python Developer", "joining_date": "2024-01-15"},
+  {"employee_id": 1002, "name": "Priya Sharma", "work_email": "priya.sharma@example.com", "department": "Human Resources", "role": "HR Executive", "joining_date": "2023-06-12"},
+  {"employee_id": 1003, "name": "Karthik Raj", "work_email": "karthik.raj@example.com", "department": "Engineering", "role": "Backend Developer", "joining_date": "2024-03-04"},
+  {"employee_id": 1004, "name": "Divya S", "work_email": "divya.s@example.com", "department": "Finance", "role": "Accountant", "joining_date": "2022-08-22"},
+  {"employee_id": 1005, "name": "Vijay Anand", "work_email": "vijay.anand@example.com", "department": "Engineering", "role": "Software Tester", "joining_date": "2023-11-06"},
+  {"employee_id": 1006, "name": "Meena Devi", "work_email": "meena.devi@example.com", "department": "Marketing", "role": "Marketing Executive", "joining_date": "2024-05-20"},
+  {"employee_id": 1007, "name": "Ravi Shankar", "work_email": "ravi.shankar@example.com", "department": "Sales", "role": "Sales Executive", "joining_date": "2022-10-10"},
+  {"employee_id": 1008, "name": "Anitha R", "work_email": "anitha.r@example.com", "department": "Human Resources", "role": "Recruiter", "joining_date": "2023-02-13"},
+  {"employee_id": 1009, "name": "Suresh Babu", "work_email": "suresh.babu@example.com", "department": "Finance", "role": "Financial Analyst", "joining_date": "2021-12-01"},
+  {"employee_id": 1010, "name": "Nila Prakash", "work_email": "nila.prakash@example.com", "department": "Engineering", "role": "API Developer", "joining_date": "2024-07-08"}
 ]

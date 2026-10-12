@@ -1,5 +1,5 @@
-
-from fastapi import FastAPI
+﻿from fastapi import FastAPI
+from app.api.health import router as health_router
 
 app = FastAPI(
     title="Employee Management API",
@@ -7,7 +7,4 @@ app = FastAPI(
     version="0.1.0",
 )
 
-
-@app.get("/health")
-def health_check():
-    return {"status": "ok"}
+app.include_router(health_router)

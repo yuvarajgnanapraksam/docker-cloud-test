@@ -1,15 +1,15 @@
+﻿# Employee Management API
 
-# Employee Management API
+A Python-based employee management API built with FastAPI.
 
-A beginner-friendly employee management API built with Python and FastAPI.
+## Current Status
 
-## Current Features
-
-- Health check endpoint
-- Automatic API documentation
-- Environment-based configuration
-- Automated health-check test
-- Sample JSON data containing 10 fictional employees
+- FastAPI application setup
+- Health endpoint: `GET /health`
+- Environment configuration using Pydantic Settings
+- Automated health endpoint test
+- Draft API contract
+- Ten fictional employee records in JSON format
 
 ## Technologies
 
@@ -18,6 +18,8 @@ A beginner-friendly employee management API built with Python and FastAPI.
 - Uvicorn
 - Pydantic Settings
 - Pytest
+- SQLAlchemy and Alembic (database integration planned)
+- PostgreSQL and Docker Compose (setup and verification pending)
 
 ## Project Structure
 
@@ -25,19 +27,20 @@ A beginner-friendly employee management API built with Python and FastAPI.
 employee-management-api/
 ├── app/
 │   ├── api/
-│   ├── models/
+│   │   └── health.py
+│   ├── modules/
 │   ├── services/
-│   ├── main.py
-│   └── config.py
-├── tests/
-│   └── test_health.py
-├── scripts/
-│   └── sample_employees.json
+│   ├── config.py
+│   └── main.py
 ├── docs/
 │   └── api-contract.md
-├── .env
+├── scripts/
+│   └── sample_employees.json
+├── tests/
+│   └── test_health.py
 ├── .env.example
 ├── .gitignore
+├── requirements.txt
 └── README.md
 ```
 
@@ -45,54 +48,60 @@ employee-management-api/
 
 ### 1. Create and activate a virtual environment
 
-```bash
-py -3.12 -m venv .venv
-```
-
-Windows PowerShell:
-
 ```powershell
+py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
 ### 2. Install dependencies
 
-```bash
-pip install fastapi "uvicorn[standard]" pydantic-settings pytest httpx
+```powershell
+python -m pip install -r requirements.txt
 ```
 
-### 3. Run the application
+### 3. Configure environment variables
 
-```bash
+Copy `.env.example` to `.env` and configure the values for your environment.
+
+Never commit `.env` or real credentials to version control.
+
+### 4. Run the API
+
+```powershell
 python -m uvicorn app.main:app --reload
 ```
 
-Health check: http://127.0.0.1:8000/health
+Health endpoint: http://127.0.0.1:8000/health
 
 API documentation: http://127.0.0.1:8000/docs
 
+Note: The current health endpoint does not require a database connection. PostgreSQL and Docker Compose setup and verification are pending.
+
 ## Run Tests
 
-```bash
+```powershell
 python -m pytest
 ```
 
+## API Contract
+
+See `docs/api-contract.md`. Employee, department, and team endpoints are planned and have not been implemented yet.
+
 ## Sample Data
 
-Fictional employee records are available in:
-
-`scripts/sample_employees.json`
+`scripts/sample_employees.json` contains ten fictional employee records for development and testing.
 
 ## Planned Work
 
-- PostgreSQL integration with Docker Compose
-- Employee, department, and role data models
-- Database migrations
-- Employee management endpoints
-- Data seeding and CSV exports
+- Complete Dockerfile and Docker Compose setup and verify API and PostgreSQL startup
+- Implement employee, department, and role database models
+- Add Alembic migrations and rollback verification
+- Implement employee CRUD and team APIs
+- Add repeatable seed scripts and CSV exports
+- Share the API contract and sample dataset for review
 
 ## Security
 
-- Keep `.env` out of version control.
-- Use `.env.example` as a configuration template.
+- Keep `.env` out of Git.
+- Commit `.env.example` with placeholder values only.
 - Never commit real credentials or secret keys.
