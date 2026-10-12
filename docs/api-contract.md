@@ -41,7 +41,7 @@ All employee, department, and team endpoints below are planned for later tasks.
 - Method: POST
 - Endpoint: `/employees`
 - Planned in: Task 3
-- Request fields: name, work_email, department_id, role_id, joining_date
+- Request fields (proposed): first_name, last_name, work_email, department_id, role_id, hire_date
 - Success: 201 Created
 - Errors: 422 Validation Error; 409 Conflict for duplicate work email
 

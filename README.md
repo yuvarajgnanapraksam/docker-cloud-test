@@ -9,7 +9,7 @@ A Python-based employee management API built with FastAPI.
 - Environment configuration using Pydantic Settings
 - Automated health endpoint test
 - Draft API contract
-- Ten fictional employee records in JSON format
+- Ten fictional employee records and referenced department records from the supplied LedgerForge Master Dataset
 
 ## Technologies
 
@@ -89,7 +89,21 @@ See `docs/api-contract.md`. Employee, department, and team endpoints are planned
 
 ## Sample Data
 
-`scripts/sample_employees.json` contains ten fictional employee records for development and testing.
+The file `scripts/sample_employees.json` contains sample records sourced from the supplied **LedgerForge Master Dataset**.
+
+- **Employees:** First 10 employee rows from the source dataset.
+- **Departments:** Department records referenced by those employees.
+- **Data format:** JSON.
+- **Data:** Fictional training records; not real employee information.
+
+The employee records preserve the source dataset's fields, including `employee_id`, `department_id`, `role_id`, `hire_date`, and `employment_status`.
+
+The sample data has been validated for:
+- Exactly 10 employee records.
+- Unique employee IDs and work email addresses.
+- Department references matching the included department records.
+
+This file is sample data for development and review. It does not mean that employee database models or CRUD endpoints have been implemented.
 
 ## Planned Work
 
