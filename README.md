@@ -19,7 +19,7 @@ A Python-based employee management API built with FastAPI.
 - Pydantic Settings
 - Pytest
 - SQLAlchemy and Alembic (database integration planned)
-- PostgreSQL and Docker Compose (setup and verification pending)
+- PostgreSQL and Docker Compose (setup and verification completed)
 
 ## Project Structure
 
@@ -40,6 +40,8 @@ employee-management-api/
 │   └── test_health.py
 ├── .env.example
 ├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
 ├── requirements.txt
 └── README.md
 ```
@@ -75,7 +77,39 @@ Health endpoint: http://127.0.0.1:8000/health
 
 API documentation: http://127.0.0.1:8000/docs
 
-Note: The current health endpoint does not require a database connection. PostgreSQL and Docker Compose setup and verification are pending.
+Note: The current health endpoint does not require a database connection. Docker Compose starts the FastAPI application and PostgreSQL database. The health endpoint and Swagger UI have been verified successfully.
+
+
+## Run with Docker Compose
+
+Make sure `.env` exists in the project root and contains the required local environment variables. You can create it by copying `.env.example` to `.env`.
+
+Start the API and PostgreSQL database:
+
+```bash
+docker compose up --build
+```
+
+Once the services start, open:
+
+- Health check: http://localhost:8000/health
+- Swagger API documentation: http://localhost:8000/docs
+
+Expected health response:
+
+```json
+{
+  "status": "ok"
+}
+```
+
+Stop the services with `Ctrl+C`, or run:
+
+```bash
+docker compose down
+```
+
+To remove the local PostgreSQL volume and its stored data as well, run `docker compose down -v`. Use this only when you intend to delete that data.
 
 ## Run Tests
 
@@ -107,7 +141,7 @@ This file is sample data for development and review. It does not mean that emplo
 
 ## Planned Work
 
-- Complete Dockerfile and Docker Compose setup and verify API and PostgreSQL startup
+- [x] Complete Dockerfile and Docker Compose setup and verify API and PostgreSQL startup
 - Implement employee, department, and role database models
 - Add Alembic migrations and rollback verification
 - Implement employee CRUD and team APIs
