@@ -153,3 +153,10 @@ This file is sample data for development and review. It does not mean that emplo
 - Keep `.env` out of Git.
 - Commit `.env.example` with placeholder values only.
 - Never commit real credentials or secret keys.
+
+## Handoff package
+
+- [Draft API Contract](docs/api-contract.md)
+- [Sample Employee Dataset](scripts/sample_employees.json)
+
+These files are provided for the Task 1 Day-2 handoff. The sample JSON contains 10 fictional employee records for reference.
