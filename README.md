@@ -160,3 +160,18 @@ This file is sample data for development and review. It does not mean that emplo
 - [Sample Employee Dataset](scripts/sample_employees.json)
 
 These files are provided for the Task 1 Day-2 handoff. The sample JSON contains 10 fictional employee records for reference.
+
+## Assumptions
+
+- Text-based primary keys are used for departments, roles, employees, and employee assignments, following the workbook identifiers.
+- Each employee has one current department and role in the employee master record. Historical department and role changes are stored in `employee_assignments`.
+- `work_email` must be unique for each employee.
+- An employee's `exit_date` cannot be earlier than their `hire_date`.
+- An assignment's `effective_to` cannot be earlier than its `effective_from`.
+- A current assignment is identified by `effective_to IS NULL`; an employee cannot have more than one current assignment.
+- `manager_id` references another employee and can be null when no manager is assigned.
+- `is_active` is used for soft deletion instead of physically deleting records.
+- `created_at` and `updated_at` fields are used for audit timestamps.
+- Annual salary band values use `NUMERIC(14,2)` to preserve decimal precision.
+- Workbook fields that use `Y`/`N` values are stored as text, and level fields are stored as integers to match the workbook's data types.
+- Nullable fields remain nullable where the workbook does not require a value.
