@@ -1,11 +1,11 @@
-﻿# Employee Management API
+# Employee Management API
 
 A Python-based employee management API built with FastAPI.
 
 ## Current Status
 
 - FastAPI application setup
-- Health endpoint: `GET /health`
+- Health endpoint: `GET /api/v1/health`
 - Environment configuration using Pydantic Settings
 - Automated health endpoint test
 - Draft API contract
@@ -18,7 +18,7 @@ A Python-based employee management API built with FastAPI.
 - Uvicorn
 - Pydantic Settings
 - Pytest
-- SQLAlchemy and Alembic (database integration planned)
+- SQLAlchemy and Alembic (database models and migrations implemented and verified)
 - PostgreSQL and Docker Compose (setup and verification completed)
 
 ## Project Structure
@@ -73,7 +73,7 @@ Never commit `.env` or real credentials to version control.
 python -m uvicorn app.main:app --reload
 ```
 
-Health endpoint: http://127.0.0.1:8000/health
+Health endpoint: http://127.0.0.1:8000/api/v1/health
 
 API documentation: http://127.0.0.1:8000/docs
 
@@ -92,7 +92,7 @@ docker compose up --build
 
 Once the services start, open:
 
-- Health check: http://localhost:8000/health
+- Health check: http://localhost:8000/api/v1/health
 - Swagger API documentation: http://localhost:8000/docs
 
 Expected health response:
@@ -142,8 +142,8 @@ This file is sample data for development and review. It does not mean that emplo
 ## Planned Work
 
 - [x] Complete Dockerfile and Docker Compose setup and verify API and PostgreSQL startup
-- Implement employee, department, and role database models
-- Add Alembic migrations and rollback verification
+- [x] Implement employee, department, and role database models
+- [x] Add Alembic migrations and rollback verification
 - Implement employee CRUD and team APIs
 - Add repeatable seed scripts and CSV exports
 - Share the API contract and sample dataset for review
